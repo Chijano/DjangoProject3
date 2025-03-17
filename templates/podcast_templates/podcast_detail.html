@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+
+{% block title %}{{ podcast.title }}{% endblock %}
+
+{% block content %}
+<h1>{{ podcast.title }}</h1>
+<p><strong>Hosted by:</strong> {{ podcast.host }}</p>
+<p><strong>Description:</strong> {{ podcast.description }}</p>
+<p><strong>Category:</strong> {{ podcast.category }}</p>
+
+<h2>Episodes</h2>
+<ul class="list-group">
+    {% for episode in episodes %}
+        <li class="list-group-item">
+            <a href="{% url 'episode_detail' episode.id %}">{{ episode.title }}</a> - {{ episode.release_date }}
+        </li>
+    {% endfor %}
+</ul>
+{% endblock %}

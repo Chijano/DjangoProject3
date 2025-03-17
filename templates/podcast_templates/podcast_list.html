@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% block title %}Podcasts{% endblock %}
+
+{% block content %}
+<h1>Podcasts</h1>
+<ul class="list-group">
+    {% for podcast in podcasts %}
+        <li class="list-group-item">
+            <a href="{% url 'podcast_detail' podcast.id %}">{{ podcast.title }}</a>
+            - Hosted by {{ podcast.host }}
+        </li>
+    {% endfor %}
+</ul>
+{% endblock %}

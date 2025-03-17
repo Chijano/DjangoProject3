@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+
+{% block title %}{{ episode.title }}{% endblock %}
+
+{% block content %}
+<h1>{{ episode.title }}</h1>
+<p><strong>Podcast:</strong> {{ episode.podcast.title }}</p>
+<p><strong>Release Date:</strong> {{ episode.release_date }}</p>
+<p><strong>Duration:</strong> {{ episode.duration }}</p>
+<p><strong>Show Notes:</strong> {{ episode.show_notes }}</p>
+{% endblock %}
