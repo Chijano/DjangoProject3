@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <div class="container">
+        <h1>{{ user.username }}'s Profile</h1>
+
+        {% if user.userprofile.avatar %}
+            <img src="{{ user.userprofile.avatar.url }}" alt="Avatar" width="150">
+        {% else %}
+            <p>No avatar uploaded.</p>
+        {% endif %}
+
+        <p><strong>Role:</strong> {{ user.userprofile.role }}</p>
+        <p><strong>Bio:</strong> {{ user.userprofile.bio }}</p>
+
+        <h2>Favorite Podcasts</h2>
+        <ul>
+            {% for podcast in user.userprofile.favorite_podcasts.all %}
+                <li>{{ podcast.title }}</li>
+            {% empty %}
+                <li>No favorite podcasts yet.</li>
+            {% endfor %}
+        </ul>
+
+        <a href="/">Back to Home</a>
+    </div>
+{% endblock %}

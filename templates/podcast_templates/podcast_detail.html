@@ -8,12 +8,21 @@
 <p><strong>Description:</strong> {{ podcast.description }}</p>
 <p><strong>Category:</strong> {{ podcast.category }}</p>
 
+
+
 <h2>Episodes</h2>
 <ul class="list-group">
     {% for episode in episodes %}
         <li class="list-group-item">
             <a href="{% url 'episode_detail' episode.id %}">{{ episode.title }}</a> - {{ episode.release_date }}
+            <!-- Link to episode-specific reviews -->
+            <a href="{% url 'episode-reviews' episode.id %}" class="btn btn-secondary btn-sm">Reviews</a>
         </li>
     {% endfor %}
 </ul>
+
+ <!-- Podcast Reviews Section -->
+<h2>Reviews</h2>
+<a href="{% url 'podcast-reviews' podcast.id %}" class="btn btn-primary">View Reviews</a>
+
 {% endblock %}

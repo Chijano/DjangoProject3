@@ -1,0 +1,34 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h2>Search</h2>
+
+<form method="GET">
+    {{ form.as_p }}
+    <button type="submit">Search</button>
+</form>
+
+{% if podcasts or episodes %}
+    <h3>Results</h3>
+
+    {% if podcasts %}
+        <h4>Podcasts</h4>
+        <ul>
+        {% for podcast in podcasts %}
+            <li><strong>{{ podcast.title }}</strong> by {{ podcast.host }} ({{ podcast.category }})</li>
+        {% endfor %}
+        </ul>
+    {% endif %}
+
+    {% if episodes %}
+        <h4>Episodes</h4>
+        <ul>
+        {% for episode in episodes %}
+            <li><strong>{{ episode.title }}</strong> (Released: {{ episode.release_date }})</li>
+        {% endfor %}
+        </ul>
+    {% endif %}
+{% else %}
+    <p>No results found.</p>
+{% endif %}
+{% endblock %}
