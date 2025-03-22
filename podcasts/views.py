@@ -1,5 +1,8 @@
+from django.contrib.auth.models import User
 from django.shortcuts import render, get_object_or_404
-from .models import Podcast, Episode, Category
+from podcasts.models import Podcast, Episode
+from django.db.models import Avg
+
 
 def podcast_list(request):
     podcasts = Podcast.objects.all().order_by('title')
@@ -17,3 +20,20 @@ def episode_detail(request, episode_id):
 def user_list_view(request):
     users = User.objects.all()
     return render(request, "users_templates/users_list.html", {"users": users})
+
+
+def homepage(request):
+    # Get top 3 rated podcasts
+    top_podcasts = Podcast.objects.annotate(avg_rating=Avg('reviews__rating')) \
+                       .order_by('-avg_rating')[:3]
+
+    # Get top 3 rated episodes
+    top_episodes = Episode.objects.annotate(avg_rating=Avg('episode_reviews__rating')) \
+                       .order_by('-avg_rating')[:3]
+
+    context = {
+        'top_podcasts': top_podcasts,
+        'top_episodes': top_episodes,
+    }
+    return render(request, 'homepage.html', context)
+

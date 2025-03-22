@@ -1,6 +1,6 @@
 from django.contrib.auth.models import User
 from django.db import models
-from podcasts.models import Podcast  # ✅ Import Podcast model
+from podcasts.models import Podcast
 
 class Role(models.Model):
     ROLE_CHOICES = [

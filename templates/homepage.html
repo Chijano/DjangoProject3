@@ -1,0 +1,41 @@
+{% extends 'base.html' %}
+
+{% block title %}Dashboard - Podcast App{% endblock %}
+
+{% block content %}
+<div class="container">
+    <h2 class="text-center mb-4">Top Rated Podcasts</h2>
+    <div class="row">
+        {% for podcast in top_podcasts %}
+        <div class="col-md-4">
+            <div class="card">
+                <img src="{{ podcast.image.url }}" class="card-img-top" alt="{{ podcast.title }}">
+                <div class="card-body">
+                    <h5 class="card-title">{{ podcast.title }}</h5>
+                    <p class="card-text">Host: {{ podcast.host }}</p>
+                    <p class="card-text">Category: {{ podcast.category.name }}</p>
+                    <p class="card-text">Rating: {{ podcast.avg_rating|floatformat:1 }}/5</p>
+                    <a href="{% url 'podcast_detail' podcast.id %}" class="btn btn-dark">View Podcast</a>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+
+    <h2 class="text-center mt-5 mb-4">Top Rated Episodes</h2>
+    <div class="row">
+        {% for episode in top_episodes %}
+        <div class="col-md-4">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">{{ episode.title }}</h5>
+                    <p class="card-text">Podcast: {{ episode.podcast.title }}</p>
+                    <p class="card-text">Rating: {{ episode.avg_rating|floatformat:1 }}/5</p>
+                    <a href="{% url 'episode_detail' episode.id %}" class="btn btn-dark">View Episode</a>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}

@@ -1,6 +1,6 @@
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
     <div class="container">
-        <a class="navbar-brand" href="{% url 'podcast_list' %}">Podcast App</a>
+        <a class="navbar-brand" href="{% url 'homepage' %}">Podcast App</a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
             <span class="navbar-toggler-icon"></span>
         </button>
@@ -12,11 +12,23 @@
                 <li class="nav-item">
                     <a class="nav-link" href="{% url 'user-list' %}">All Users</a>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="{% url 'search' %}">Search</a>
-                </li>
+
+                {% if user.is_authenticated %}
+                    <li class="nav-item">
+                        <form id="logout-form" method="post" action="{% url 'logout' %}" style="display:inline;">
+                            {% csrf_token %}
+                            <button type="submit" class="btn btn-danger">Logout</button>
+                        </form>
+                    </li>
+                {% else %}
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'login' %}">Login</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'register' %}">Register</a>
+                    </li>
+                {% endif %}
             </ul>
         </div>
     </div>
 </nav>
-

@@ -11,10 +11,18 @@ https://docs.djangoproject.com/en/5.1/ref/settings/
 """
 
 from pathlib import Path
+import os
+
+from django.template.context_processors import media
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
+MEDIA_URL = '/media/'  # This should be '/media/', not '/podcast_images/'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+
+LOGIN_REDIRECT_URL = 'homepage'  # Redirect users to the homepage after login
+LOGOUT_REDIRECT_URL = 'homepage'  # Redirect users to homepage after logout
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/5.1/howto/deployment/checklist/
@@ -40,7 +48,6 @@ INSTALLED_APPS = [
     'podcasts.apps.PodcastsConfig',
     'users',
     'reviews',
-    'search'
 ]
 
 MIDDLEWARE = [
@@ -113,3 +120,5 @@ STATIC_URL = 'static/'
 # https://docs.djangoproject.com/en/5.1/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+
