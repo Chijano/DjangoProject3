@@ -3,18 +3,44 @@
 {% block title %}Register{% endblock %}
 
 {% block content %}
-<div class="container">
-    <h2>Register</h2>
-    <form method="post">
-        {% csrf_token %}
-        {{ form.as_p }}
+<div class="container mt-4">
+    <h2 class="mb-3">Register</h2>
 
-        <label for="role">Select Role:</label>
-        <select name="role" id="role" required>
-            {% for role in roles %}
-                <option value="{{ role.id }}">{{ role.name }}</option>
-            {% endfor %}
-        </select>
+    <form method="post" class="needs-validation" novalidate>
+        {% csrf_token %}
+
+        {% if messages %}
+            <div class="alert alert-danger">
+                {% for message in messages %}
+                    <p>{{ message }}</p>
+                {% endfor %}
+            </div>
+        {% endif %}
+
+        <!-- Username Field -->
+        <div class="mb-3">
+            <label for="username" class="form-label">Username:</label>
+            <input type="text" name="username" id="username" class="form-control" required>
+        </div>
+
+        <!-- Password Field -->
+        <div class="mb-3">
+            <label for="password" class="form-label">Password:</label>
+            <input type="password" name="password" id="password" class="form-control" required>
+        </div>
+
+        <!-- Role Selection (excluding Admin) -->
+        <div class="mb-3">
+            <label for="role" class="form-label">Select Role:</label>
+            <select name="role" id="role" class="form-select" required>
+                <option value="" disabled selected>Choose a role...</option>
+                {% for role in roles %}
+                    {% if role.name != "Admin" %} <!-- Exclude Admin -->
+                        <option value="{{ role.id }}">{{ role.name }}</option>
+                    {% endif %}
+                {% endfor %}
+            </select>
+        </div>
 
         <button type="submit" class="btn btn-primary">Register</button>
     </form>

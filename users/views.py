@@ -16,38 +16,41 @@ def user_list_view(request):
 
 def register(request):
     if request.method == "POST":
-        form = UserCreationForm(request.POST)
-        role_id = request.POST.get("role")  # Get role ID from form
+        username = request.POST.get("username")
+        password = request.POST.get("password")
+        role_id = request.POST.get("role")  # Get role ID
 
-        if form.is_valid():
-            user = form.save()
+        print(f"🛑 DEBUG: Selected Role ID from Form: {role_id}")  # Debugging step 1
 
-            print("Selected Role ID:", role_id)  # ✅ Debugging
+        if not username or not password or not role_id:
+            messages.error(request, "All fields are required.")
+            return redirect("register")
 
-            # Get the role instance
-            role = Role.objects.filter(id=role_id).first()
+        # Check if user already exists
+        if User.objects.filter(username=username).exists():
+            messages.error(request, "Username already taken.")
+            return redirect("register")
 
-            if role:
-                print("Assigned Role:", role.name)  # ✅ Debugging
+        # Create the user
+        user = User.objects.create_user(username=username, password=password)
 
-                # ✅ Explicitly set and save the role
-                user_profile, created = UserProfile.objects.get_or_create(user=user)
-                user_profile.role = role  # Assign role
-                user_profile.save(force_update=True)  # Force saving
+        # Fetch the correct role
+        role = Role.objects.filter(id=role_id).exclude(name="Admin").first()
+        print(f"🛑 DEBUG: Assigned Role from DB: {role.name if role else 'None'}")  # Debugging step 2
 
-                # 🔴 New Debugging Print - Check if role is actually saved
-                saved_role = UserProfile.objects.get(user=user).role
-                print("🛑 DEBUG: Role saved in DB:", saved_role)
+        if not role:
+            messages.error(request, "Invalid role selection.")
+            return redirect("register")
 
-                messages.success(request, "Registration successful! You are now logged in.")
-            else:
-                messages.warning(request, "Invalid role selected. Please update your profile.")
+        # Ensure a profile doesn't already exist, then assign the role
+        profile, created = UserProfile.objects.get_or_create(user=user)
+        profile.role = role  # Explicitly assign the selected role
+        profile.save()
+        print(f"✅ DEBUG: Role Successfully Saved in DB: {profile.role.name}")  # Debugging step 3
 
-            login(request, user)  # Log in the user
-            return redirect("homepage")  # Redirect to homepage
+        messages.success(request, "Registration successful! You can now log in.")
+        return redirect("login")
 
-    else:
-        form = UserCreationForm()
-
-    roles = Role.objects.exclude(name="Admin")  # Exclude Admin role
-    return render(request, "users_templates/register.html", {"form": form, "roles": roles})
+    # Fetch roles excluding Admin
+    roles = Role.objects.exclude(name="Admin")
+    return render(request, "users_templates/register.html", {"roles": roles})
