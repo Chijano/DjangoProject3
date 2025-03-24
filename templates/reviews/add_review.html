@@ -2,9 +2,18 @@
 
 {% block content %}
     <h1>Add Review</h1>
-    <form method="post">
-        {% csrf_token %}
-        {{ form.as_p }}
-        <button type="submit">Submit</button>
-    </form>
+
+    {% if error %}
+        <p style="color: red;">{{ error }}</p>
+    {% endif %}
+
+    {% if user.is_authenticated %}
+        <form method="post">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <button type="submit">Submit</button>
+        </form>
+    {% else %}
+        <p>You must be logged in to add a review.</p>
+    {% endif %}
 {% endblock %}

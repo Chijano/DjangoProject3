@@ -12,4 +12,17 @@
     {% empty %}
         <p>No reviews yet.</p>
     {% endfor %}
+
+    {% if error %}
+        <p style="color: red;">{{ error }}</p>
+    {% endif %}
+
+    {% if user.is_authenticated and form %}
+        <h2>Add a Review</h2>
+        <form method="post">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <button type="submit">Submit Review</button>
+        </form>
+    {% endif %}
 {% endblock %}

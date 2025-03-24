@@ -4,25 +4,25 @@
 
 {% block content %}
 <h1>{{ podcast.title }}</h1>
-<p><strong>Hosted by:</strong> {{ podcast.host }}</p>
+<p><strong>Hosted by:</strong> {{ owner_name }}</p>
 <p><strong>Description:</strong> {{ podcast.description }}</p>
 <p><strong>Category:</strong> {{ podcast.category }}</p>
-
-
 
 <h2>Episodes</h2>
 <ul class="list-group">
     {% for episode in episodes %}
         <li class="list-group-item">
             <a href="{% url 'episode_detail' episode.id %}">{{ episode.title }}</a> - {{ episode.release_date }}
-            <!-- Link to episode-specific reviews -->
-            <a href="{% url 'episode-reviews' episode.id %}" class="btn btn-secondary btn-sm">Reviews</a>
+            <a href="{% url 'episode_reviews' episode.id %}" class="btn btn-secondary btn-sm">Reviews</a>
         </li>
     {% endfor %}
 </ul>
 
- <!-- Podcast Reviews Section -->
+{% if is_owner %}
+    <a href="{% url 'add_episode' podcast.id %}" class="btn btn-success">Add New Episode</a>
+{% endif %}
+
 <h2>Reviews</h2>
-<a href="{% url 'podcast-reviews' podcast.id %}" class="btn btn-primary">View Reviews</a>
+<a href="{% url 'podcast_reviews' podcast.id %}" class="btn btn-primary">View Reviews</a>
 
 {% endblock %}

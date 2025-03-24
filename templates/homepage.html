@@ -12,7 +12,7 @@
                 <img src="{{ podcast.image.url }}" class="card-img-top" alt="{{ podcast.title }}">
                 <div class="card-body">
                     <h5 class="card-title">{{ podcast.title }}</h5>
-                    <p class="card-text">Host: {{ podcast.host }}</p>
+                    <p class="card-text">Host: {{ podcast.owner_name }}</p>
                     <p class="card-text">Category: {{ podcast.category.name }}</p>
                     <p class="card-text">Rating: {{ podcast.avg_rating|floatformat:1 }}/5</p>
                     <a href="{% url 'podcast_detail' podcast.id %}" class="btn btn-dark">View Podcast</a>

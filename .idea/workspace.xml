@@ -7,14 +7,28 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="84575456-571f-4b95-9cc9-bfe92ecb03c4" name="Changes" comment="hruza">
+    <list default="true" id="84575456-571f-4b95-9cc9-bfe92ecb03c4" name="Changes" comment="lepsi">
+      <change afterPath="$PROJECT_DIR$/podcasts/forms.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/about.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/podcast_templates/add_episode.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/podcast_templates/add_podcast.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/privacy_policy.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DjangoProject3/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/DjangoProject3/urls.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/users_templates/register.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/users_templates/register.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/users/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/users/admin.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/users/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/users/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/users/signals.py" beforeDir="false" afterPath="$PROJECT_DIR$/users/signals.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/users/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/users/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/podcasts/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/podcasts/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/podcasts/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/podcasts/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/podcasts/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/podcasts/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/reviews/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/reviews/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/reviews/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/reviews/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/Partials/footer.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/Partials/footer.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/homepage.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/homepage.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/podcast_templates/episode_detail.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/podcast_templates/episode_detail.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/podcast_templates/podcast_detail.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/podcast_templates/podcast_detail.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/podcast_templates/podcast_list.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/podcast_templates/podcast_list.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/reviews/add_review.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/reviews/add_review.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/reviews/episode_reviews.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/reviews/episode_reviews.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/reviews/podcast_reviews.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/reviews/podcast_reviews.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -49,28 +63,30 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "DefaultHtmlFileTemplate": "HTML File",
-    "Django Server.DjangoProject3.executor": "Run",
-    "Python.test.executor": "Run",
-    "RunOnceActivity.OpenDjangoStructureViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "RunOnceActivity.pycharm.django.structure.promotion.once.per.project": "true",
-    "django.template.preview.state": "SHOW_EDITOR",
-    "git-widget-placeholder": "master",
-    "ignore.virus.scanning.warn.message": "true",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;DefaultHtmlFileTemplate&quot;: &quot;HTML File&quot;,
+    &quot;Django Server.DjangoProject3.executor&quot;: &quot;Run&quot;,
+    &quot;Python.test.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.OpenDjangoStructureViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.pycharm.django.structure.promotion.once.per.project&quot;: &quot;true&quot;,
+    &quot;django.template.preview.state&quot;: &quot;SHOW_EDITOR&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\marti\PycharmProjects\DjangoProject\DjangoProject3\templates" />
+      <recent name="C:\Users\marti\PycharmProjects\DjangoProject\DjangoProject3\templates\podcast_templates" />
       <recent name="C:\Users\marti\PycharmProjects\DjangoProject\DjangoProject3" />
       <recent name="C:\Users\marti\PycharmProjects\DjangoProject\DjangoProject3\DjangoProject3\media" />
       <recent name="C:\Users\marti\PycharmProjects\DjangoProject\DjangoProject3\templates\Partials" />
@@ -122,7 +138,8 @@
       <workItem from="1742242913237" duration="1629000" />
       <workItem from="1742284368293" duration="17534000" />
       <workItem from="1742630133065" duration="367000" />
-      <workItem from="1742630537119" duration="21016000" />
+      <workItem from="1742630537119" duration="21650000" />
+      <workItem from="1742807227791" duration="15726000" />
     </task>
     <task id="LOCAL-00001" summary="first app">
       <option name="closed" value="true" />
@@ -164,7 +181,15 @@
       <option name="project" value="LOCAL" />
       <updated>1742653447365</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="lepsi">
+      <option name="closed" value="true" />
+      <created>1742669000504</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1742669000504</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -174,7 +199,8 @@
     <MESSAGE value="first app" />
     <MESSAGE value="start" />
     <MESSAGE value="hruza" />
-    <option name="LAST_COMMIT_MESSAGE" value="hruza" />
+    <MESSAGE value="lepsi" />
+    <option name="LAST_COMMIT_MESSAGE" value="lepsi" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/DjangoProject3$test.coverage" NAME="test Coverage Results" MODIFIED="1742638127664" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
