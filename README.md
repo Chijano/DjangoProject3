@@ -16,8 +16,8 @@ Welcome to **Podcast App**, a Django-based web application for discovering, revi
 ### 1. Clone the Repository
 
 ```bash
-git clone https://github.com/your-username/podcast-app.git
-cd podcast-app
+git clone https://github.com/Chijano/DjangoProject3.git
+cd DjangoProject3
 ```
 
 ### 2. Create a Virtual Environment
@@ -27,10 +27,14 @@ python -m venv venv
 source venv/bin/activate  # On Windows use: venv\Scripts\activate
 ```
 
-### 3. Install Dependencies
-
+### 3. Install Dependencies (if applicable)
+If you have a `requirements.txt`, install dependencies:
 ```bash
 pip install -r requirements.txt
+```
+Otherwise, manually install Django:
+```bash
+pip install django
 ```
 
 ### 4. Apply Migrations
@@ -57,20 +61,17 @@ Then open `http://127.0.0.1:8000/` in your browser.
 
 - **Database**: SQLite (default) – can be changed in `settings.py`.
 - **Templates**: Stored in `templates/`.
-- **Static Files**: Located in `static/`.
 
 ## Project Structure
 
 ```
-/ podcast-app
+/ DjangoProject3
   ├── podcasts/          # Podcast & Episode models, views, templates
   ├── users/             # User authentication & profiles
   ├── reviews/           # Review system for podcasts & episodes
-  ├── static/            # CSS, JS, and media files
   ├── templates/         # HTML templates
   ├── manage.py          # Django project manager
-  ├── requirements.txt   # Python dependencies
-  └── README.md          # This file
+  ├── README.md          # This file
 ```
 
 ## License
@@ -79,4 +80,4 @@ This project is open-source. Feel free to modify and use it as needed.
 
 ## Contact
 
-For any questions, contact us at martinmatustik90@gmail.com.
+For any questions, contact us at [martinmatustik90@gmail.com](mailto:martinmatustik90@gmail.com).
