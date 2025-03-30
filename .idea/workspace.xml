@@ -8,27 +8,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="84575456-571f-4b95-9cc9-bfe92ecb03c4" name="Changes" comment="lepsi">
-      <change afterPath="$PROJECT_DIR$/podcasts/forms.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/about.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/podcast_templates/add_episode.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/podcast_templates/add_podcast.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/privacy_policy.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DjangoProject3/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/DjangoProject3/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/podcasts/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/podcasts/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/podcasts/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/podcasts/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/podcasts/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/podcasts/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reviews/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/reviews/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reviews/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/reviews/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/Partials/footer.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/Partials/footer.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/homepage.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/homepage.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/podcast_templates/episode_detail.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/podcast_templates/episode_detail.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/podcast_templates/podcast_detail.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/podcast_templates/podcast_detail.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/podcast_templates/podcast_list.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/podcast_templates/podcast_list.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/reviews/add_review.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/reviews/add_review.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/reviews/episode_reviews.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/reviews/episode_reviews.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/reviews/podcast_reviews.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/reviews/podcast_reviews.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -49,6 +29,18 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;Chijano&quot;
+  }
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/Chijano/DjangoProject3.git&quot;,
+    &quot;accountId&quot;: &quot;ac8cab99-99b0-4679-8996-48874ef490df&quot;
+  }
+}</component>
   <component name="ProblemsViewState">
     <option name="selectedTabId" value="CurrentFile" />
   </component>
@@ -140,6 +132,10 @@
       <workItem from="1742630133065" duration="367000" />
       <workItem from="1742630537119" duration="21650000" />
       <workItem from="1742807227791" duration="15726000" />
+      <workItem from="1743353646379" duration="349000" />
+      <workItem from="1743354011520" duration="73000" />
+      <workItem from="1743354094383" duration="55000" />
+      <workItem from="1743359975551" duration="797000" />
     </task>
     <task id="LOCAL-00001" summary="first app">
       <option name="closed" value="true" />
